@@ -1,7 +1,7 @@
 { "commands": [
 { "hdr": "6F1", "eax": "40", "fcm1": true, "dbg": true, "cmd": {"22": "1700"}, "freq": 1,
   "signals": [
-    {"id": "LANDCRUISER_ODO_2", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "unit": "kilometers" }, "name": "Odometer variant"}
+    {"id": "LANDCRUISER_ODO_V3", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "unit": "kilometers" }, "name": "Odometer variant"}
   ]},
 { "hdr": "6F1", "eax": "12", "fcm1": true, "dbg": true, "cmd": {"22": "4AB1"}, "freq": 0.25,
   "signals": [
@@ -17,8 +17,8 @@
   ]},
 { "hdr": "6F1", "eax": "60", "fcm1": true, "dbg": true, "cmd": {"22": "D10D"}, "freq": 5,
   "signals": [
-    {"id": "LANDCRUISER_ODO1", "path": "Trips", "fmt": {           "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer #1", "suggestedMetric": "odometer"},
-    {"id": "LANDCRUISER_ODO2", "path": "Trips", "fmt": {"bix": 32, "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer #2", "suggestedMetric": "odometer"}
+    {"id": "LANDCRUISER_ODO", "path": "Trips", "fmt": {           "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer #1", "suggestedMetric": "odometer"},
+    {"id": "LANDCRUISER_ODO_V2", "path": "Trips", "fmt": {"bix": 32, "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer #2", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "6F1", "eax": "0D", "fcm1": true, "dbg": true, "cmd": {"22": "D240"}, "freq": 0.25,
   "signals": [
@@ -26,7 +26,7 @@
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA12"}, "freq": 30,
   "signals": [
-    {"id": "LANDCRUISER_ATF_TEMP_V2", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "ATF temperature"}
+    {"id": "LANDCRUISER_ATF_TEMP", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "ATF temperature"}
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA1F"}, "freq": 1,
   "signals": [
@@ -46,11 +46,11 @@
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA23"}, "freq": 15,
   "signals": [
-    {"id": "LANDCRUISER_ODO_V3", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "mul": 8, "unit": "kilometers" }, "name": "[EGS] mileage/odometer"}
+    {"id": "LANDCRUISER_ODO_V4", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "mul": 8, "unit": "kilometers" }, "name": "[EGS] mileage/odometer"}
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA25"}, "freq": 30,
   "signals": [
-    {"id": "LANDCRUISER_EOT_V2", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Engine oil temperature"}
+    {"id": "LANDCRUISER_EOT", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Engine oil temperature"}
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA28"}, "freq": 1,
   "signals": [
@@ -63,7 +63,7 @@
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA2E"}, "freq": 30,
   "signals": [
-    {"id": "LANDCRUISER_GEAR_V2", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
+    {"id": "LANDCRUISER_GEAR", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA37"}, "freq": 30,
   "signals": [
@@ -106,7 +106,7 @@
   ]},
 { "hdr": "747", "fcm1": true, "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
   "signals": [
-    {"id": "LANDCRUISER_ODO_V4", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "LANDCRUISER_ODO_V6", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "747", "fcm1": true, "dbg": true, "cmd": {"22": "182E"}, "freq": 1,
   "signals": [
@@ -203,13 +203,13 @@
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"21": "28"}, "freq": 5, "filter": { "from": 2019 },
   "signals": [
-    {"id": "LANDCRUISER_ODO", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "LANDCRUISER_ODO_V7", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"21": "51"}, "freq": 1,
   "signals": [
     {"id": "LANDCRUISER_PREV_TRIP_DST", "path": "Trips",  "fmt": {"bix": 40, "len": 16, "max": 655.35,             "div": 100,             "unit": "kilometers" }, "name": "Previous trip distance"},
     {"id": "LANDCRUISER_VVTOT",         "path": "Engine", "fmt": {"bix": 56, "len": 8,  "max": 215,    "min": -40,             "add": -40, "unit": "celsius"    }, "name": "Variable valve timing oil temperature"},
-    {"id": "LANDCRUISER_EOT",           "path": "Engine", "fmt": {"bix": 72, "len": 8,  "max": 215,    "min": -40,             "add": -40, "unit": "celsius"    }, "name": "Engine oil temperature"}
+    {"id": "LANDCRUISER_EOT_V2",        "path": "Engine", "fmt": {"bix": 72, "len": 8,  "max": 215,    "min": -40,             "add": -40, "unit": "celsius"    }, "name": "Engine oil temperature"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"21": "82"}, "freq": 1,
   "signals": [
@@ -218,7 +218,7 @@
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"21": "85"}, "freq": 0.5,
   "signals": [
-    {"id": "LANDCRUISER_GEAR",        "path": "Transmission", "fmt": {          "len": 8, "max": 20, "unit": "scalar" }, "name": "Gear"},
+    {"id": "LANDCRUISER_GEAR_V2",      "path": "Transmission", "fmt": {          "len": 8, "max": 20, "unit": "scalar" }, "name": "Gear"},
     {"id": "LANDCRUISER_GEAR_LOCKUP", "path": "Transmission", "fmt": {"bix": 8, "len": 1, "max": 1,  "unit": "offon"  }, "name": "Gear lock-up", "description": "Mechanism within the automatic transmission that momentarily locks the gears during gear changes, providing a smoother and more efficient transition between different gears, especially when accelerating or decelerating; essentially helps minimize power loss and jerkiness during gear shifts."}
   ]}
 ]

@@ -184,9 +184,9 @@
     {"id": "LANDCRUISER_YAW_RATE",    "path": "Orientation", "fmt": {"bix": 16, "len": 8,  "max": 127,    "min": -128,             "add": -128,                  "unit": "degrees" }, "name": "Yaw rate value (degrees/se"},
     {"id": "LANDCRUISER_STEER_ANGLE", "path": "Control",     "fmt": {"bix": 24, "len": 16, "max": 3276.7, "min": -3276, "div": 10, "add": -3276.8,               "unit": "degrees" }, "name": "Steering wheel angle"}
   ]},
-{ "hdr": "7C0", "dbg": true, "cmd": {"21": "29"}, "freq": 1, "filter": { "to": 2019 },
+{ "hdr": "7C0", "fcm1": true, "cmd": {"22": "1022"}, "freq": 1,
   "signals": [
-    {"id": "LANDCRUISER_FLI_VOL", "path": "Fuel", "fmt": { "len": 8, "max": 127.5, "div": 2, "unit": "liters" }, "name": "Fuel level (volume)", "suggestedMetric": "fuelTankLevel"}
+    {"id": "LANDCRUISER_FLV", "path": "Fuel", "fmt": { "len": 16, "max": 655, "div": 100, "nullmax": 655, "unit": "liters" }, "name": "Fuel remaining", "suggestedMetric": "fuelTankLevel"}
   ]},
 { "hdr": "7D2", "fcm1": true, "dbg": true, "cmd": {"22": "106C"}, "freq": 5,
   "signals": [
